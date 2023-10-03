@@ -1,6 +1,4 @@
-# PlayScout
-
-**Play Scout React + TypeScript Application**
+# PlayScout (React + TypeScript Application)
 
 PlayScout is a react based game listing application
 
@@ -10,7 +8,7 @@ https://play-scout-aoiyv96ay-touhid-imams-projects.vercel.app/
 
 ## How to setup the site?
 
-- Create an account in https://rawg.io/ as we build game site by using that API
+- Create an account in https://rawg.io/ as I build game site by using that API
 - Goto the source/services/api-client.ts and change the .env variable with your own credentials
 
 ## Installation
