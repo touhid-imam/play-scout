@@ -42,7 +42,7 @@ function App() {
           />
         </GridItem>
       </Show>
-      <GridItem area="main" padding="10px">
+      <GridItem area="main" padding="15px">
         <GameHeading gameQuery={gameQuery} />
         <HStack marginBottom={4}>
           <PlatformSelector
