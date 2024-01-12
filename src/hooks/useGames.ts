@@ -4,7 +4,6 @@ import APIClient, { FetchResponse } from "../services/api-client";
 import useGameQueryStore from "../store";
 import { Platform } from "./usePlatforms";
 
-const apiClient = new APIClient<Game>("/games")
 
 export interface Game {
     id: number;
@@ -14,6 +13,8 @@ export interface Game {
     metacritic: number;
     rating_top: number;
   }
+
+const apiClient = new APIClient<Game>("/games")
   
   
 const useGames = () => {
