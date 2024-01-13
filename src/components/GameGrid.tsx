@@ -10,7 +10,6 @@ function GameGrid() {
   const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  console.log(data?.pages);
   const fetchGameCount =
     data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
 
