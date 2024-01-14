@@ -1,6 +1,5 @@
-import React from "react";
 import useTrailers from "../hooks/useTrailers";
-import { AspectRatio, Box, Spinner } from "@chakra-ui/react";
+import { AspectRatio } from "@chakra-ui/react";
 
 interface Props {
   gameId: number;

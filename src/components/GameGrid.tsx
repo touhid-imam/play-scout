@@ -5,14 +5,24 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
+import Game from "../entities/Game";
+
+interface gameDataResponse<T> {
+  pages: {
+    results: T[];
+  }[];
+}
 
 function GameGrid() {
   const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
+  console.log(data?.pages.map((page) => console.log(page)));
   const fetchGameCount =
-    data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
-
+    (data as gameDataResponse<Game[]>)?.pages.reduce(
+      (total, page) => total + page.results.length,
+      0
+    ) || 0;
   return (
     <>
       {error && <Text>{error.message}</Text>}
@@ -30,7 +40,7 @@ function GameGrid() {
                 <GameCardSkeleton />
               </GameCardContainer>
             ))}
-          {data?.pages.map((page, index) => (
+          {(data as gameDataResponse<Game>)?.pages.map((page, index) => (
             <React.Fragment key={index}>
               {page.results.map((game) => (
                 <GameCardContainer key={game.id}>
