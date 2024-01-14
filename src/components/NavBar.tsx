@@ -7,11 +7,9 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <HStack padding="15px">
-      <Box width="70px">
-        <Link to="/">
-          <Image src={logo} boxSize="60px" />
-        </Link>
-      </Box>
+      <Link to="/">
+        <Image src={logo} boxSize="60px" objectFit="cover" />
+      </Link>
       <SearchInput />
       <ColorModeSwitch />
     </HStack>
